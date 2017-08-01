@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-01T06:26:42.703Z</updated>
+  <updated>2017-08-01T07:05:30.435Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2333333</title>
+    <link href="http://yoursite.com/2017/08/01/2333333/"/>
+    <id>http://yoursite.com/2017/08/01/2333333/</id>
+    <published>2017-08-01T06:57:10.000Z</published>
+    <updated>2017-08-01T07:05:30.435Z</updated>
+    
+    <content type="html"><![CDATA[<p>22332222223332222223322333322333222233322333322<br>22322222222322222222322333322332233223322333322<br>22332222222222222223322333322322333322322333322<br>22333322222222222233333222233322333322322333322<br>22333333222222223333333322333322333322322333322<br>22333333332222333333333322333332233223322333322<br>22333333333223333333333322333333222233332222223 </p>
+<ol>
+<li>chrome 打开 </li>
+<li>ctrl+F </li>
+<li>然后输入 2</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;22332222223332222223322333322333222233322333322&lt;br&gt;22322222222322222222322333322332233223322333322&lt;br&gt;22332222222222222223322333322322333
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>ms17010-exploit</title>
     <link href="http://yoursite.com/2017/08/01/ms17010-exploit/"/>
     <id>http://yoursite.com/2017/08/01/ms17010-exploit/</id>
     <published>2017-08-01T05:26:26.000Z</published>
-    <updated>2017-08-01T06:26:42.703Z</updated>
+    <updated>2017-08-01T06:45:56.473Z</updated>
     
-    <content type="html"><![CDATA[<p>前言</p>
+    <content type="html"><![CDATA[<p><a href="https://www.hi-noob.com/20170427/ms17_010/" title="ms17-010 exp复现" target="_blank" rel="external">原文:http://www.hi-noob.com/20170427/ms17_010</a></p>
+<p>前言</p>
 <p>Shadow Brokers公布的文件需要win32位+python2.6+pywin32环境，利用起来有很多设置，略显麻烦，正好t00ls有相关的exp和利用过程，我就写了这篇文章记录我自己的一个复现过程。</p>
 <a id="more"></a> 
 <h1 id="0x00-创建wine"><a href="#0x00-创建wine" class="headerlink" title="0x00 创建wine"></a>0x00 创建wine</h1><p>kali 64位</p>
@@ -40,13 +65,13 @@
 <p>这也就难怪获得的权限是local service \ network service。<br>我们只需将注入进程修改为system / admin权限的进程就OK，例如explorer.exe、lsass.exe等等。为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/5.png" alt=""></p>
 <p>或者你可以每次利用时set PROCESSINJECT 进程名 设置即可。<br><img src="http://op2ihgtv7.bkt.clouddn.com/6.png" alt=""></p>
 <p>下面是获取到system权限的效果图<br><img src="http://op2ihgtv7.bkt.clouddn.com/7.jpg" alt=""></p>
-<p><a href="https://www.hi-noob.com/20170427/ms17_010/" title="ms17-010 exp复现" target="_blank" rel="external">原文:http://www.hi-noob.com/20170427/ms17_010</a></p>
 <h3 id="最后附一张成功图片"><a href="#最后附一张成功图片" class="headerlink" title="最后附一张成功图片"></a>最后附一张成功图片</h3><p>注：原文set target 9要根据实际msf show options来<br><img src="http://ww1.sinaimg.cn/large/76aacbf5gy1fi46qz6kikj214y0mddh3.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;前言&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;https://www.hi-noob.com/20170427/ms17_010/&quot; title=&quot;ms17-010 exp复现&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原文:http://www.hi-noob.com/20170427/ms17_010&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前言&lt;/p&gt;
 &lt;p&gt;Shadow Brokers公布的文件需要win32位+python2.6+pywin32环境，利用起来有很多设置，略显麻烦，正好t00ls有相关的exp和利用过程，我就写了这篇文章记录我自己的一个复现过程。&lt;/p&gt;
     
     </summary>
