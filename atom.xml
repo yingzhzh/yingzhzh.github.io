@@ -41,9 +41,9 @@
       <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
-    
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
     
   </entry>
   
@@ -164,7 +164,7 @@ Win+R运行cmd
     <link href="http://yoursite.com/2017/08/01/oh-my-zsh/"/>
     <id>http://yoursite.com/2017/08/01/oh-my-zsh/</id>
     <published>2017-08-01T03:51:11.000Z</published>
-    <updated>2017-08-02T03:09:17.627Z</updated>
+    <updated>2017-08-02T05:40:55.652Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><p>如果你用 Mac，就可以直接看下一节<br>如果你用 Redhat Linux，执行：sudo yum install zsh<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh<br>如果你用 Windows……去洗洗睡吧。</p>
 <a id="more"></a> 
@@ -217,11 +217,13 @@ Win+R运行cmd
       <category term="系统环境" scheme="http://yoursite.com/categories/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
     
     
-      <category term="oh-my-zsh" scheme="http://yoursite.com/tags/oh-my-zsh/"/>
-    
-      <category term="mac,linux" scheme="http://yoursite.com/tags/mac-linux/"/>
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
       <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
+    
+      <category term="oh-my-zsh" scheme="http://yoursite.com/tags/oh-my-zsh/"/>
+    
+      <category term="mac" scheme="http://yoursite.com/tags/mac/"/>
     
   </entry>
   
