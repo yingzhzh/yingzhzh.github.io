@@ -4,9 +4,9 @@
   <subtitle>网络安全爱好者</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://yingzhzh.github.io/"/>
   <updated>2017-08-02T03:44:26.285Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yingzhzh.github.io/</id>
   
   <author>
     <name>Yingzhzh</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Linux 下多种反弹 shell 方法</title>
-    <link href="http://yoursite.com/2017/08/02/linux-reverse-shell/"/>
-    <id>http://yoursite.com/2017/08/02/linux-reverse-shell/</id>
+    <link href="http://yingzhzh.github.io/2017/08/02/linux-reverse-shell/"/>
+    <id>http://yingzhzh.github.io/2017/08/02/linux-reverse-shell/</id>
     <published>2017-08-02T03:37:27.000Z</published>
     <updated>2017-08-02T03:44:26.285Z</updated>
     
@@ -38,19 +38,19 @@
     
     </summary>
     
-      <category term="渗透测试" scheme="http://yoursite.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+      <category term="渗透测试" scheme="http://yingzhzh.github.io/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://yingzhzh.github.io/tags/linux/"/>
     
-      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
+      <category term="shell" scheme="http://yingzhzh.github.io/tags/shell/"/>
     
   </entry>
   
   <entry>
     <title>2333333</title>
-    <link href="http://yoursite.com/2017/08/01/2333333/"/>
-    <id>http://yoursite.com/2017/08/01/2333333/</id>
+    <link href="http://yingzhzh.github.io/2017/08/01/2333333/"/>
+    <id>http://yingzhzh.github.io/2017/08/01/2333333/</id>
     <published>2017-08-01T06:57:10.000Z</published>
     <updated>2017-08-02T03:26:50.897Z</updated>
     
@@ -62,19 +62,19 @@
     
     </summary>
     
-      <category term="生活娱乐" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E5%A8%B1%E4%B9%90/"/>
+      <category term="生活娱乐" scheme="http://yingzhzh.github.io/categories/%E7%94%9F%E6%B4%BB%E5%A8%B1%E4%B9%90/"/>
     
     
-      <category term="特殊的表白姿势" scheme="http://yoursite.com/tags/%E7%89%B9%E6%AE%8A%E7%9A%84%E8%A1%A8%E7%99%BD%E5%A7%BF%E5%8A%BF/"/>
+      <category term="特殊的表白姿势" scheme="http://yingzhzh.github.io/tags/%E7%89%B9%E6%AE%8A%E7%9A%84%E8%A1%A8%E7%99%BD%E5%A7%BF%E5%8A%BF/"/>
     
-      <category term="666" scheme="http://yoursite.com/tags/666/"/>
+      <category term="666" scheme="http://yingzhzh.github.io/tags/666/"/>
     
   </entry>
   
   <entry>
     <title>ms17010-exploit</title>
-    <link href="http://yoursite.com/2017/08/01/ms17010-exploit/"/>
-    <id>http://yoursite.com/2017/08/01/ms17010-exploit/</id>
+    <link href="http://yingzhzh.github.io/2017/08/01/ms17010-exploit/"/>
+    <id>http://yingzhzh.github.io/2017/08/01/ms17010-exploit/</id>
     <published>2017-08-01T05:26:26.000Z</published>
     <updated>2017-08-02T03:10:26.146Z</updated>
     
@@ -108,17 +108,17 @@
     
     </summary>
     
-      <category term="漏洞利用" scheme="http://yoursite.com/categories/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+      <category term="漏洞利用" scheme="http://yingzhzh.github.io/categories/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-      <category term="ms17-010" scheme="http://yoursite.com/tags/ms17-010/"/>
+      <category term="ms17-010" scheme="http://yingzhzh.github.io/tags/ms17-010/"/>
     
   </entry>
   
   <entry>
     <title>win7安装wamp遇到api-ms-win-crt-runtime-l1-1-0.dll丢失问题</title>
-    <link href="http://yoursite.com/2017/08/01/win7sp1-apache/"/>
-    <id>http://yoursite.com/2017/08/01/win7sp1-apache/</id>
+    <link href="http://yingzhzh.github.io/2017/08/01/win7sp1-apache/"/>
+    <id>http://yingzhzh.github.io/2017/08/01/win7sp1-apache/</id>
     <published>2017-08-01T04:58:22.000Z</published>
     <updated>2017-08-02T03:09:25.494Z</updated>
     
@@ -150,19 +150,19 @@ Win+R运行cmd
     
     </summary>
     
-      <category term="系统环境" scheme="http://yoursite.com/categories/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
+      <category term="系统环境" scheme="http://yingzhzh.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
     
     
-      <category term="win7" scheme="http://yoursite.com/tags/win7/"/>
+      <category term="win7" scheme="http://yingzhzh.github.io/tags/win7/"/>
     
-      <category term="走过的坑" scheme="http://yoursite.com/tags/%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/"/>
+      <category term="走过的坑" scheme="http://yingzhzh.github.io/tags/%E8%B5%B0%E8%BF%87%E7%9A%84%E5%9D%91/"/>
     
   </entry>
   
   <entry>
     <title>如何安装、配置和使用 zsh</title>
-    <link href="http://yoursite.com/2017/08/01/oh-my-zsh/"/>
-    <id>http://yoursite.com/2017/08/01/oh-my-zsh/</id>
+    <link href="http://yingzhzh.github.io/2017/08/01/oh-my-zsh/"/>
+    <id>http://yingzhzh.github.io/2017/08/01/oh-my-zsh/</id>
     <published>2017-08-01T03:51:11.000Z</published>
     <updated>2017-08-02T05:40:55.652Z</updated>
     
@@ -214,16 +214,16 @@ Win+R运行cmd
     
     </summary>
     
-      <category term="系统环境" scheme="http://yoursite.com/categories/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
+      <category term="系统环境" scheme="http://yingzhzh.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/"/>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://yingzhzh.github.io/tags/linux/"/>
     
-      <category term="shell" scheme="http://yoursite.com/tags/shell/"/>
+      <category term="shell" scheme="http://yingzhzh.github.io/tags/shell/"/>
     
-      <category term="oh-my-zsh" scheme="http://yoursite.com/tags/oh-my-zsh/"/>
+      <category term="oh-my-zsh" scheme="http://yingzhzh.github.io/tags/oh-my-zsh/"/>
     
-      <category term="mac" scheme="http://yoursite.com/tags/mac/"/>
+      <category term="mac" scheme="http://yingzhzh.github.io/tags/mac/"/>
     
   </entry>
   
