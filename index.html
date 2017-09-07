@@ -259,6 +259,144 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yingzhzh.github.io/2017/09/07/pentestbox-ms17010/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yingzhzh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/76aacbf5gy1fi34hj68owj2050050wec.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yingzhzh's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/07/pentestbox-ms17010/" itemprop="url">利用Pentestbox打造MS17-010移动"杀器"</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T23:02:40+08:00">
+                2017-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/漏洞利用/" itemprop="url" rel="index">
+                    <span itemprop="name">漏洞利用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <div id="contenttxt"><br>                            <p><span style="color: rgb(239, 71, 71);"><b><em></em></b></span><span style="color: rgb(239, 71, 71);"><b>本文原创作者：ssooking，本文属FreeBuf原创奖励计划，未经许可禁止转载</b></span></p><br><h2>一. 前言</h2><br><p><b style="color: rgb(0, 176, 80);">前段时间Shadow Broker披露了 Windows大量漏洞，甚至爆出黑客组织 Equation Group 对于Windows 远程漏洞 MS17-010 的利用工具，该漏洞影响范围之广，堪称杀器。可以看看官方通告。大伙们也忙的热火朝天~~于是想着把攻击环境移植到u盘里，然后比如去学校机房，网吧。</b></p><br><p>这里分享一下个人的移植过程，以及在使用攻击代码过程中遇到的问题，思路就是利用现成的神器pentestbox，向里添加攻击代码以及其运行需要的python环境。</p><br><h2>二. 环境移植过程</h2><br><p>Pentest Box是一款Windows平台下预配置的便携式开源渗透测试环境，集成了各种编译运行环境，具体的可以到网上了解一下。</p><br><h3>1. &nbsp;工具准备：</h3><br><p>Pentestbox:</p><br><p><a href="https://pentestbox.org/zh/" target="_blank" rel="external">https://pentestbox.org/zh/</a></p><br><p>方程式工具包: EQGRP_Lost_in_Translation</p><br><p><a href="https://github.com/x0rz/EQGRP_Lost_in_Translation/tree/master" target="_blank" rel="external">https://github.com/x0rz/EQGRP_Lost_in_Translation/tree/master</a></p><br><p>python环境</p><br><p>必须在Python2.6 &nbsp;和 pywin32-221环境下，如果你用其他环境，会报各种诸如模块/dll缺失等错误</p><br><p><a href="http://image.3001.net/2017/04/4f1198f61d050b967c06615a030217b65.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/4f1198f61d050b967c06615a030217b65.png" src="http://image.3001.net/2017/04/4f1198f61d050b967c06615a030217b65.png" alt="" style="display: inline;"></a>    </p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/4f1198f61d050b967c06615a030217b65.png" target="_blank" rel="external">http://image.3001.net/2017/04/4f1198f61d050b967c06615a030217b65.png</a>“ alt=””&gt;    &lt;/p&gt;</noscript><br><p>Python2.6 &nbsp;和 pywin32-221位数需要相同，我用的是32位的</p><br><p>Python2.6.6 （32）&nbsp;</p><br><p>下载链接：<a href="https://www.python.org/download/releases/2.6.6/" target="_blank" rel="external">https://www.python.org/download/releases/2.6.6/</a></p><br><p>pywin32-221（32）</p><br><p>下载链接：</p><br><p><a href="https://sourceforge.net/projects/pywin32/files/pywin32/Build%20221/pywin32-221.win32-py2.6.exe/download" target="_blank" rel="external">https://sourceforge.net/projects/pywin32/files/pywin32/Build%20221/pywin32-221.win32-py2.6.exe/download</a></p><br><h3>2. &nbsp;Pentestbox下python2.6环境配置</h3><br><p>分别安装，然后你会得到攻击包运行的python2.6环境</p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/2e7c6548d0e1804ebb396c045a86c54b5.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/2e7c6548d0e1804ebb396c045a86c54b5.png" src="http://image.3001.net/2017/04/2e7c6548d0e1804ebb396c045a86c54b5.png" alt="" style="display: inline;"></a>    </p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/2e7c6548d0e1804ebb396c045a86c54b5.png" target="_blank" rel="external">http://image.3001.net/2017/04/2e7c6548d0e1804ebb396c045a86c54b5.png</a>“ alt=””&gt;    &lt;/p&gt;</noscript><br><p>在Python26\Lib\site-packages目录下，你会发现插件也已经安装    </p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/fcc2e591488a0ea47f0171651a0102e15.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/fcc2e591488a0ea47f0171651a0102e15.png" src="http://image.3001.net/2017/04/fcc2e591488a0ea47f0171651a0102e15.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/fcc2e591488a0ea47f0171651a0102e15.png" target="_blank" rel="external">http://image.3001.net/2017/04/fcc2e591488a0ea47f0171651a0102e15.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>然后把python26这个文件夹拷贝到你的pentestbox环境变量目录下：Pentestbox\base</p><br><p>刚才你也可以直接装到pentestbox\base下</p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/0869acc49d502c30f1f8cbebcc64918c5.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/0869acc49d502c30f1f8cbebcc64918c5.png" src="http://image.3001.net/2017/04/0869acc49d502c30f1f8cbebcc64918c5.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/0869acc49d502c30f1f8cbebcc64918c5.png" target="_blank" rel="external">http://image.3001.net/2017/04/0869acc49d502c30f1f8cbebcc64918c5.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>然后我们添加python2.6环境变量,在Pentestbox \config\alias文件中加一行</p><br><p>python26=”%pentestbox_ROOT%\base\Python26\python.exe” $</p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/22b61f61f49bd49a84c47233c70183ff5.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/22b61f61f49bd49a84c47233c70183ff5.png" src="http://image.3001.net/2017/04/22b61f61f49bd49a84c47233c70183ff5.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/22b61f61f49bd49a84c47233c70183ff5.png" target="_blank" rel="external">http://image.3001.net/2017/04/22b61f61f49bd49a84c47233c70183ff5.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>然后我们启动pentestbox，由于pentestbox通过线程注入挂钩cmd.exe来调用系统命令，因此杀软可能会提示警告，信任即可。    </p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/034d2d767c5dc34b56cb644ce11248f65.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/034d2d767c5dc34b56cb644ce11248f65.png" src="http://image.3001.net/2017/04/034d2d767c5dc34b56cb644ce11248f65.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/034d2d767c5dc34b56cb644ce11248f65.png" target="_blank" rel="external">http://image.3001.net/2017/04/034d2d767c5dc34b56cb644ce11248f65.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>这个时候，我们运行python26可以看到环境配置成功</p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/36751094820e1fadf2c59799d5cce3ef5.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/36751094820e1fadf2c59799d5cce3ef5.png" src="http://image.3001.net/2017/04/36751094820e1fadf2c59799d5cce3ef5.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/36751094820e1fadf2c59799d5cce3ef5.png" target="_blank" rel="external">http://image.3001.net/2017/04/36751094820e1fadf2c59799d5cce3ef5.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>3. 漏洞利用工具配置</p><br><p>我们下载EQGRP_Lost_in_Translation工具包,修改windows目录下fb.py，去除不必要的代码</p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/9f10dff60e982831e4770c85ae5165ef5.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/9f10dff60e982831e4770c85ae5165ef5.png" src="http://image.3001.net/2017/04/9f10dff60e982831e4770c85ae5165ef5.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/9f10dff60e982831e4770c85ae5165ef5.png" target="_blank" rel="external">http://image.3001.net/2017/04/9f10dff60e982831e4770c85ae5165ef5.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/43a1862f82eeb18bf6edb842ab109f4b5.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/43a1862f82eeb18bf6edb842ab109f4b5.png" src="http://image.3001.net/2017/04/43a1862f82eeb18bf6edb842ab109f4b5.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/43a1862f82eeb18bf6edb842ab109f4b5.png" target="_blank" rel="external">http://image.3001.net/2017/04/43a1862f82eeb18bf6edb842ab109f4b5.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>然后我们把windows文件夹复制到pentestbox目录下</p><br><p style="text-align: center;">&nbsp;<a href="http://image.3001.net/2017/04/48fac7fdda1a9bbce4e5a0af3b7e46835.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/48fac7fdda1a9bbce4e5a0af3b7e46835.png" src="http://image.3001.net/2017/04/48fac7fdda1a9bbce4e5a0af3b7e46835.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/48fac7fdda1a9bbce4e5a0af3b7e46835.png" target="_blank" rel="external">http://image.3001.net/2017/04/48fac7fdda1a9bbce4e5a0af3b7e46835.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>这里我把windows里的文件放到pentestbox根目录下的ms17-010文件夹内</p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/d72452ebfa42654d0cb397baaf63e4f05.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/d72452ebfa42654d0cb397baaf63e4f05.png" src="http://image.3001.net/2017/04/d72452ebfa42654d0cb397baaf63e4f05.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/d72452ebfa42654d0cb397baaf63e4f05.png" target="_blank" rel="external">http://image.3001.net/2017/04/d72452ebfa42654d0cb397baaf63e4f05.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>我们进入ms07-010目录并执行python26 fb.py    </p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/ee9fbfedf2540e5f10cd82e2ed2878a45.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/ee9fbfedf2540e5f10cd82e2ed2878a45.png" src="http://image.3001.net/2017/04/ee9fbfedf2540e5f10cd82e2ed2878a45.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/ee9fbfedf2540e5f10cd82e2ed2878a45.png" target="_blank" rel="external">http://image.3001.net/2017/04/ee9fbfedf2540e5f10cd82e2ed2878a45.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br><p>这样我们就可以启动攻击程序了</p><br><p style="text-align: center;"><a href="http://image.3001.net/2017/04/2ef4f1cad48cd5eb4e581edb6ad7f11e5.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/2017/04/2ef4f1cad48cd5eb4e581edb6ad7f11e5.png" src="http://image.3001.net/2017/04/2ef4f1cad48cd5eb4e581edb6ad7f11e5.png" alt="" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/2017/04/2ef4f1cad48cd5eb4e581edb6ad7f11e5.png" target="_blank" rel="external">http://image.3001.net/2017/04/2ef4f1cad48cd5eb4e581edb6ad7f11e5.png</a>“ alt=””&gt;&lt;/p&gt;</noscript><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/07/pentestbox-ms17010/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yingzhzh.github.io/2017/08/18/so-cool-shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1442,7 +1580,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1464,7 +1602,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
