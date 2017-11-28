@@ -259,6 +259,145 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yingzhzh.github.io/2017/11/28/cve-2017-11882/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yingzhzh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/76aacbf5gy1fi34hj68owj2050050wec.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yingzhzh's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/28/cve-2017-11882/" itemprop="url">cve-2017-11882 漏洞复现和利用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T23:44:30+08:00">
+                2017-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/漏洞利用/" itemprop="url" rel="index">
+                    <span itemprop="name">漏洞利用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>原文：<a href="http://www.freebuf.com/vuls/154978.html" target="_blank" rel="external">http://www.freebuf.com/vuls/154978.html</a></p>
+<div id="contenttxt"><br>                            <h2>0×01前言</h2><br><p><b style="color: rgb(0, 176, 80);">2017年11月14日微软发布了潜伏17年之久的office远程代码执行漏洞（cve-2017-11882）。该漏洞为office内存破坏漏洞，影响目前流行的office版本。</b></p><br><p><b style="color: rgb(0, 176, 80);">网上的利用方法比较乱，在这儿我将各种方法总结一下。顺便在这儿感谢乱舞大大以及他的团队，信安之路</b></p><br><h2>0×02 漏洞复现</h2><br><blockquote><p>测试环境：win7+kali+office 2007  xp+kali+office 2003</p><br><p>win7 ip:10.10.1.144  xp ip: 10.10.1.126 kali ip 10.10.1.67</p><br></blockquote><br><h3>一． 简单测试弹出计算器（xp)</h3><br><p>1.在kali下执行生成一个含有恶意代码的doc进行测试：</p><br><p><span style="font-size: 12pt;">PythonCommand109b_CVE-2017-11882 -c “cmd.exe /c calc.exe” -o test.doc</span></p><br><p>这条指令的意思是调用cmd并执行calc.exe（即计算器）<a href="http://image.3001.net/images/20171123/15114315718699.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/images/20171123/15114315718699.png!small" src="http://image.3001.net/images/20171123/15114315718699.png!small" alt="1.png" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/images/20171123/15114315718699.png!small" target="_blank" rel="external">http://image.3001.net/images/20171123/15114315718699.png!small</a>“ alt=”1.png”&gt;&lt;/p&gt;</noscript><br><p>2.在靶机上打开就会弹出计算器：</p><br><p style="text-align: center;"><a href="http://image.3001.net/images/20171123/15114315788368.png" class="highslide-image" onclick="return hs.expand(this);" target="_blank"><img data-original="http://image.3001.net/images/20171123/15114315788368.png!small" src="http://image.3001.net/images/20171123/15114315788368.png!small" alt="2.png" style="display: inline;"></a></p><br><noscript>&lt;img src=”<a href="http://image.3001.net/images/20171123/15114315788368.png!small" target="_blank" rel="external">http://image.3001.net/images/20171123/15114315788368.png!small</a>“ alt=”2.png”&gt;&lt;/p&gt;</noscript><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/28/cve-2017-11882/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yingzhzh.github.io/2017/09/07/pentestbox-ms17010/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1580,7 +1719,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1602,7 +1741,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
